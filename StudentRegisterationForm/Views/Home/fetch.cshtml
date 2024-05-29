@@ -1,0 +1,42 @@
+﻿@model FetchingModel
+@{
+    ViewData["Title"] = "fetch";
+}
+
+<h1>Fetch Details From Database Using DropDown List</h1>
+
+<form asp-action="fetch">
+    <select asp-for="ID" asp-items="@(new SelectList(Model.Studs,"Value","Text"))" class="form-control">
+    </select>
+    <br />
+    <input type="submit" value="Find" class="btn btn-outline-primary" />
+</form>
+<br />
+@{
+    if (TempData["dataName"] != null)
+    {
+        <h3>Student Details</h3>
+        <p><b>Name :</b> @TempData["dataName"]</p>
+        <p><b>Email :</b> @TempData["dataEmail"]</p>
+        <p><b>Age :</b> @TempData["dataAge"]</p>
+        <p><b>Contact :</b> @TempData["dataPhone"]</p>
+    }
+    else if (ViewBag.Message != null)
+    {
+        <p>@ViewBag.Message</p>
+    }
+}
+<!--
+@*asp-items="@(new SelectList(Model.Studs,"Value","Text")*@
+
+The code snippet you provided seems to be written in ASP.NET Core Razor syntax. It's creating a SelectList object using data from Model.Studs and then using it to populate a dropdown list in a Razor view.
+
+Let's break it down:
+
+@*@(... ):*@ This syntax in Razor is used to execute C# code within HTML markup.
+new SelectList(Model.Studs, "Value", "Text"): This part is creating a new SelectList object.
+Model.Studs is likely a collection of items from the model being passed to the view.
+"Value" and "Text" are the names of properties in each item of Model.Studs. These properties will be used to determine the value and text of each option in the dropdown list.
+Overall, this code is dynamically generating a dropdown list (<select>) in the HTML based on the data in Model.Studs, with each option having a value and text determined by the "Value" and "Text" properties of each item in Model.Studs.
+
+-->

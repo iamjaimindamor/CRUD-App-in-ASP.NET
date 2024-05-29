@@ -1,0 +1,51 @@
+﻿@model StudentModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">DOT NET SCHOOL REGISTERATION</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-4">
+
+            <form class="d-grid mx-auto" asp-controller="Home" asp-action="Index" method="post">
+                <b><label asp-for="Name"></label></b>
+                <input class="form-control" asp-for="Name" placeholder="Enter Name" />
+                <span asp-validation-for="Name" style="color:crimson"></span>
+                <br />
+                <b><label asp-for="Email">Email</label></b>
+                <input class="form-control" asp-for="Email" placeholder="Enter Email Address" />
+                <span asp-validation-for="Email" style="color:crimson" ></span>
+                <br />
+              <b><label asp-for="Password">Password</label></b>
+                <input class="form-control" asp-for="Password" placeholder="Enter Password" type="password"/>
+                <span asp-validation-for="Password" style="color:crimson" ></span>
+                <br />
+               <b> <label asp-for="Confirm_Password"></label></b>
+                <input class="form-control" asp-for="Confirm_Password" placeholder="Enter Confirm Password" type="password" />
+                <span asp-validation-for="Confirm_Password" style="color:crimson" ></span>
+                <br />
+                <b><label asp-for="Age">Age</label></b>
+                <input class="form-control" asp-for="Age" placeholder="Enter Age" />
+                <span asp-validation-for="Age" style="color:crimson" ></span>
+                <br />
+                <b><label asp-for="Phone_Number">Phone Number</label></b>
+                <input class="form-control" asp-for="Phone_Number" placeholder="Enter Phone Number" />
+                <span asp-validation-for="Phone_Number" style="color:crimson" ></span>
+                <br />
+                <input type="submit" class="btn btn-outline-success btn-block"/>
+                <br />
+                <input type="reset" class="btn btn-outline-danger btn-block" />
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
